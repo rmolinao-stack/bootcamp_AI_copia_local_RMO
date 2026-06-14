@@ -1,0 +1,14 @@
+{
+    "analyst": "John Doe",
+    "project": "Sales Analysis Q1 2024",
+    "metrics": {
+        "total_revenue": 125000,
+        "avg_order_value": 450.5,
+        "conversion_rate": 0.045
+    },
+    "top_products": [
+        "Laptop",
+        "Monitor",
+        "Keyboard"
+    ]
+}
