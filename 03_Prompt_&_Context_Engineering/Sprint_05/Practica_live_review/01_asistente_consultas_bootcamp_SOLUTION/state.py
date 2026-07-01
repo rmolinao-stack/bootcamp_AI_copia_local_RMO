@@ -25,44 +25,52 @@ def inicializar_estado(user_profile: dict | None = None) -> dict:
 
 
 def append_user(state: dict, texto: str) -> None:
-    """TODO: contexto y chat — añade mensaje del alumno al historial.
+    """Añade mensaje del alumno al historial.
 
     Entrada: state de inicializar_estado, texto = pregunta del usuario.
     Efecto: state["messages"].append({"role": "user", "text": texto.strip()})
 
     Ver README FASE 2, Tarea 3.
     """
-    raise NotImplementedError("Implementa append_user()")
+    state["messages"].append({"role": "user", "text": texto.strip()})
 
 
 def append_model(state: dict, texto: str) -> None:
-    """TODO: contexto y chat — añade respuesta del modelo al historial.
+    """Añade respuesta del modelo al historial.
 
     Entrada: state, texto = respuesta de Gemini.
     Efecto: state["messages"].append({"role": "model", "text": texto.strip()})
 
     Ver README FASE 2, Tarea 3.
     """
-    raise NotImplementedError("Implementa append_model()")
+    state["messages"].append({"role": "model", "text": texto.strip()})
 
 
 def ultimos_n(state: dict, n: int) -> list[dict]:
-    """TODO: contexto y chat — devuelve los últimos n mensajes del chat.
+    """Devuelve los últimos n mensajes del chat.
 
     Entrada: state, n = WINDOW (desde config.py, suele ser 6).
     Salida: lista de {"role": "user"|"model", "text": "..."}; [] si n <= 0.
 
     Ver README FASE 2, Tarea 3.
     """
-    raise NotImplementedError("Implementa ultimos_n()")
+    msgs = state.get("messages", [])
+    return msgs[-n:] if n > 0 else []
 
 
 def guardar_clasificacion(state: dict, consulta: dict, clasificacion: dict) -> None:
-    """TODO: contexto y chat (opcional) — guarda clasificación en el state.
+    """Guarda clasificación en el state (opcional / experimentos).
 
     Entrada: consulta original + dict category/priority/summary.
     Efecto: añade un registro a state["consultas_clasificadas"].
 
     Ver README experimentos opcionales.
     """
-    raise NotImplementedError("Implementa guardar_clasificacion()")
+    state.setdefault("consultas_clasificadas", []).append(
+        {
+            "nombre": consulta.get("nombre"),
+            "email": consulta.get("email"),
+            "mensaje": consulta.get("mensaje"),
+            "clasificacion": clasificacion,
+        }
+    )
