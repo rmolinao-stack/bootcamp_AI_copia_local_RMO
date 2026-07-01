@@ -28,41 +28,16 @@ def validar_consulta(datos: dict) -> list[str]:
 
     Ver README FASE 1, Tarea 1 y config.py (MIN/MAX_CHARS, PATRON_EMAIL).
     """
-    msg_out = []
-      
-    kk = datos.get("kk", "").strip()
-    nombre = datos.get("nombre", "").strip()
-    email = datos.get("email").strip()
-    mensaje = datos.get("mensaje").strip()
-
-    #if nombre == None
-
-    print(f"Datos y tipo de kk: {kk}, {type(kk)}")
-    print(f"Datos y tipo de nombre: {nombre}, {type(nombre)}")
-    print(f"Datos y tipo de email: {email}, {type(email)}")
-    print(f"Datos y tipo de mensaje: {mensaje}, {type(mensaje)}")
-
-    print(msg_out)
-      
-      
-
-
-
-    
+    try:
+      print("hola")
+      datos.get("kk")
+      #datos.get("")
+    except:
+       print("Ha pasado algo raro")
 
 
 
     # TODO: clasificación — implementar validación
-    #raise NotImplementedError(
-    #    "Completa validar_consulta() — revisa config.py y data/consultas_ejemplo.json"
-    #)
-
-if __name__ == "__main__":
-    print("hola mundo")
-
-    d = {
-    "nombre": "Ana García",
-    "email": "ana.garcia@ejemplo.com",
-    "mensaje": "No entiendo cuándo es la live review del Sprint 5 y qué tengo que entregar."
-  }
-    validar_consulta(d)
+    raise NotImplementedError(
+        "Completa validar_consulta() — revisa config.py y data/consultas_ejemplo.json"
+    )

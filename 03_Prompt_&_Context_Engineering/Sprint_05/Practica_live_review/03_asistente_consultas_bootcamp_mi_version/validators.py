@@ -29,13 +29,18 @@ def validar_consulta(datos: dict) -> list[str]:
     Ver README FASE 1, Tarea 1 y config.py (MIN/MAX_CHARS, PATRON_EMAIL).
     """
     msg_out = []
+
+    if nombre == ""
       
     kk = datos.get("kk", "").strip()
     nombre = datos.get("nombre", "").strip()
-    email = datos.get("email").strip()
-    mensaje = datos.get("mensaje").strip()
+    email = datos.get("email", "").strip()
+    mensaje = datos.get("mensaje", "").strip()
 
-    #if nombre == None
+    if nom
+
+    if kk == "":
+        
 
     print(f"Datos y tipo de kk: {kk}, {type(kk)}")
     print(f"Datos y tipo de nombre: {nombre}, {type(nombre)}")
@@ -43,14 +48,8 @@ def validar_consulta(datos: dict) -> list[str]:
     print(f"Datos y tipo de mensaje: {mensaje}, {type(mensaje)}")
 
     print(msg_out)
-      
-      
 
-
-
-    
-
-
+    return None
 
     # TODO: clasificación — implementar validación
     #raise NotImplementedError(
