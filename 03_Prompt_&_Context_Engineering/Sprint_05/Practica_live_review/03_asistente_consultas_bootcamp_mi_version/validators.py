@@ -30,16 +30,16 @@ def validar_consulta(datos: dict) -> list[str]:
     """
     msg_out = []
 
-    if nombre == ""
+    #if nombre == ""
       
     kk = datos.get("kk", "").strip()
     nombre = datos.get("nombre", "").strip()
     email = datos.get("email", "").strip()
     mensaje = datos.get("mensaje", "").strip()
 
-    if nom
+    #if nom
 
-    if kk == "":
+    #if kk == "":
         
 
     print(f"Datos y tipo de kk: {kk}, {type(kk)}")
