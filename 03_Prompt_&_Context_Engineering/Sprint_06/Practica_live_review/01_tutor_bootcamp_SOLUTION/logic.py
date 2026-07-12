@@ -79,6 +79,9 @@ def procesar_turno(
         recent_messages=ultimos_n(state, ventana),
     )
 
+    print("************* PROMT ****************")
+    print(prompt)
+
     try:
         texto, metricas = safe_generate(prompt, temperature=config["temperature"])
     except ValueError as e:
